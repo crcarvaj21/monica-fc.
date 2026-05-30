@@ -346,4 +346,291 @@ body {
 .btn-social:hover {
     transform: scale(1.1); /* Efecto al pasar el mouse */
 }
+/* --- COLORES OFICIALES DEL CLUB --- */
+:root {
+    --color-principal: #111111; /* Color principal (Negro) */
+    --color-secundario: #d4af37; /* Color de detalles (Dorado) */
+    --color-fondo: #f4f4f9; /* Color de fondo de la web */
+    --color-texto: #333333;
+}
+
+/* --- CONFIGURACIÓN GENERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    scroll-behavior: smooth;
+}
+
+/* --- MENÚ DE NAVEGACIÓN --- */
+.navbar {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--color-secundario);
+    letter-spacing: 2px;
+}
+
+.enlaces {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.enlaces a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.enlaces a:hover {
+    color: var(--color-secundario);
+}
+
+/* --- BANNER PRINCIPAL (HERO) --- */
+.hero {
+    background-color: var(--color-principal);
+    background-image: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url('img/logo.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    border-bottom: 5px solid var(--color-secundario);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--color-secundario);
+    font-weight: 700;
+}
+
+/* --- SECCIONES GENERALES --- */
+.seccion {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.seccion h2 {
+    font-size: 2.5rem;
+    color: var(--color-principal);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* --- TARJETAS DE JUGADORES --- */
+.contenedor-jugadores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tarjeta-jugador {
+    background: white;
+    width: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animación de flote */
+.tarjeta-jugador:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    border-bottom: 4px solid var(--color-secundario);
+}
+
+.foto-perfil {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background-color: #ddd; /* Color gris si no carga la foto */
+}
+
+.dorsal {
+    background-color: var(--color-secundario);
+    color: var(--color-principal);
+    font-size: 1.5rem;
+    font-weight: 900;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.tarjeta-jugador h3 {
+    padding: 15px 10px 5px;
+    font-size: 1.2rem;
+    color: var(--color-principal);
+}
+
+.posicion {
+    padding-bottom: 20px;
+    color: #666;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* --- FORMULARIO DE CONTACTO --- */
+.seccion-contacto {
+    background-color: white;
+}
+
+.seccion-contacto p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.formulario-contacto {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px;
+    background-color: var(--color-fondo);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.formulario-contacto input,
+.formulario-contacto select,
+.formulario-contacto textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto select:focus,
+.formulario-contacto textarea:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+.btn-enviar {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-enviar:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-principal);
+    transform: scale(1.02);
+}
+
+/* --- PIE DE PÁGINA Y REDES SOCIALES --- */
+.footer {
+    text-align: center;
+    padding: 50px 20px 30px;
+    background-color: var(--color-principal);
+    color: white;
+}
+
+.footer h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+}
+
+.redes-sociales {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-social {
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.tiktok {
+    background-color: #000;
+    border: 2px solid #00f2fe; /* Color estilo TikTok */
+}
+
+.btn-social:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* --- DISEÑO RESPONSIVO (Para celulares) --- */
+@media (max-width: 600px) {
+    .enlaces {
+        display: none; /* Oculta el menú en pantallas muy chicas para que no estorbe */
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .tarjeta-jugador {
+        width: 100%; /* Las tarjetas ocupan toda la pantalla en el celular */
+        max-width: 300px;
+    }
 }
