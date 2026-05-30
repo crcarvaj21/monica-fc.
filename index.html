@@ -9,58 +9,51 @@
 </head>
 <body>
 
-    <!-- Menú de Navegación -->
     <nav class="navbar">
         <div class="logo">MONICA FC</div>
         <ul class="enlaces">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#plantel">Plantel</a></li>
-            <li><a href="#galeria">Galería</a></li>
-            <li><a href="#tienda">Tienda</a></li>
+            <li><a href="#momentos">Momentos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
 
-    <!-- Banner Principal -->
     <header id="inicio" class="hero">
         <div class="hero-content">
-            <h1>Bienvenidos al Rey de copas</h1>
-            <p>Padres de Vascoamigos y Ronconredbull</p>
+            <h1>EL GIGANTE DE CONCHALÍ</h1>
+            <p>Rey de copas. Padres de Vascoamigos y Ronconredbull.</p>
         </div>
     </header>
 
-    <!-- Sección: El Plantel -->
     <section id="plantel" class="seccion">
         <h2>El Plantel Oficial</h2>
         <div class="contenedor-jugadores">
             
-            <!-- JUGADOR 1 -->
             <div class="tarjeta-jugador">
-                <img src="im/img/jugador1.jpeg" alt="Foto Jugador 1" class="foto-perfil">
-                <div class="Dorsal">10</div>
+                <img src="img/jugador1.jpeg" alt="Foto Jugador 1" class="foto-perfil">
+                <div class="dorsal">10</div>
                 <h3>Nombre Jugador 1</h3>
                 <p class="posicion">Mediocampista</p>
             </div>
 
-            <!-- JUGADOR 2 -->
             <div class="tarjeta-jugador">
-                <img src="im/img/jugador2.jpeg" alt="Foto Jugador 2" class="foto-perfil">
-                <div class="Dorsal">1</div>
+                <img src="img/jugador2.jpeg" alt="Foto Jugador 2" class="foto-perfil">
+                <div class="dorsal">1</div>
                 <h3>Nombre Jugador 2</h3>
                 <p class="posicion">Guardameta</p>
             </div>
 
-            <!-- JUGADOR 3 -->
             <div class="tarjeta-jugador">
-                <img src="im/img/jugador3.jpeg" alt="Foto Jugador 3" class="foto-perfil">
-                <div class="Dorsal">9</div>
+                <img src="img/jugador3.jpeg" alt="Foto Jugador 3" class="foto-perfil">
+                <div class="dorsal">9</div>
                 <h3>Nombre Jugador 3</h3>
                 <p class="posicion">Delantero</p>
             </div>
 
-            <!-- JUGADOR 4 -->
             <div class="tarjeta-jugador">
-                <img src="im/img/jugador4.jpeg" alt="Foto Jugador 4" class="foto-perfil">
-                <div class="Dorsal">4</div>
+                <img src="img/jugador4.jpeg" alt="Foto Jugador 4" class="foto-perfil">
+                <div class="dorsal">4</div>
                 <h3>Nombre Jugador 4</h3>
                 <p class="posicion">Defensa</p>
             </div>
@@ -68,14 +61,47 @@
         </div>
     </section>
 
-    <!-- Redes Sociales y Pie de Página -->
+    <section id="momentos" class="seccion seccion-oscura">
+        <h2>Mejores Momentos</h2>
+        <p>Revive las mejores jugadas y goles del Gigante de Conchalí.</p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/stAVoy_enaw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section id="contacto" class="seccion seccion-contacto">
+        <h2>Mensajes para el Plantel</h2>
+        <p>¿Quieres enviarle un mensaje de aliento a los jugadores? ¡Escríbenos!</p>
+        
+        <form action="https://formspree.io/f/TU_CODIGO_AQUI" method="POST" class="formulario-contacto">
+            <input type="text" name="nombre" placeholder="Tu Nombre o Apodo" required>
+            
+            <select name="jugador" required>
+                <option value="" disabled selected>¿A quién le escribes?</option>
+                <option value="Todo el equipo">A todo el equipo</option>
+                <option value="El 10">Al 10 (Mediocampista)</option>
+                <option value="El Arquero">Al Arquero</option>
+                <option value="El Goleador">Al Delantero</option>
+                <option value="La Defensa">A la Defensa</option>
+            </select>
+            
+            <textarea name="mensaje" placeholder="Tu mensaje de aliento..." rows="4" required></textarea>
+            
+            <button type="submit" class="btn-enviar">Enviar Mensaje ⚽</button>
+        </form>
+    </section>
+
     <footer class="footer">
         <h2>Síguenos en nuestras Redes</h2>
         <div class="redes-sociales">
-            <a href="https://www.instagram.com/monica.footbalclub/" target="_blank" class="btn-social instagram">📷 Instagram</a>
-            <a href="https://www.tiktok.com/@monicafc2025?_r=1&_t=ZS-96mM0hAXVYa" target="_blank" class="btn-social tiktok">🎵 TikTok</a>
+            <a href="https://www.instagram.com/monica.footbalclub/" target="_blank" class="btn-icono">
+                <img src="img/instagram.png" alt="Instagram Monica FC">
+            </a>
+            <a href="https://www.tiktok.com/@monicafc2025?_r=1&_t=ZS-96mM0hAXVYa" target="_blank" class="btn-icono">
+                <img src="img/tiktok.png" alt="TikTok Monica FC">
+            </a>
         </div>
-        <p>Monica FC © 2026 - El Gigante de Conchalí</p>
+        <p>Monica FC © 2026 - Conchalí, Santiago</p>
     </footer>
 
 </body>

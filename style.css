@@ -1,356 +1,8 @@
-/* =========================================
-   ESTILOS OFICIALES MONICA FC
-   Colores: Negro (#000000) y Amarillo (#FFC107)
-========================================= */
-
-/* 1. CONFIGURACIÓN BÁSICA Y TIPOGRAFÍA */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: #000000;
-    color: #FFFFFF;
-}
-
-/* =========================================
-   2. MENÚ DE NAVEGACIÓN (NAVBAR)
-========================================= */
-.navbar {
-    background-color: #111111;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 50px;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 3px solid #FFC107;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.navbar .logo {
-    font-size: 28px;
-    font-weight: 900;
-    color: #FFC107;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.navbar .enlaces {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-
-.navbar .enlaces a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-.navbar .enlaces a:hover {
-    color: #FFC107;
-}
-
-/* =========================================
-   3. BANNER PRINCIPAL (HERO)
-========================================= */
-.hero {
-    background-color: #000000;
-    background-size: cover;
-    background-position: center;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 60px;
-    border-bottom: 5px solid #FFC107;
-}
-
-.hero h1 {
-    font-size: 60px;
-    font-weight: 900;
-    color: #FFC107;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 20px;
-    color: #DDDDDD;
-    letter-spacing: 1px;
-}
-
-/* =========================================
-   4. SECCIONES GENERALES
-========================================= */
-.seccion {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.seccion.oscuro {
-    background-color: #111111;
-}
-
-.seccion h2 {
-    color: #FFC107;
-    font-size: 36px;
-    font-weight: 900;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* =========================================
-   5. TARJETAS DEL PLANTEL
-========================================= */
-.contenedor-jugadores {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.tarjeta-jugador {
-    background-color: #1a1a1a;
-    padding: 25px 20px;
-    border-radius: 12px;
-    width: 240px;
-    text-align: center;
-    border: 1px solid #333;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tarjeta-jugador:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(255, 193, 7, 0.2);
-    border-color: #FFC107;
-}
-
-.foto-perfil {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #FFC107;
-    background-color: #333;
-    margin-bottom: 15px;
-}
-
-.tarjeta-jugador .Dorsal {
-    font-size: 45px;
-    font-weight: 900;
-    color: #FFC107;
-    margin-bottom: 5px;
-    line-height: 1;
-}
-
-.tarjeta-jugador h3 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 5px;
-    color: #FFFFFF;
-}
-
-.tarjeta-jugador .posicion {
-    font-size: 14px;
-    color: #AAAAAA;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* =========================================
-   6. GALERÍA DE FOTOS
-========================================= */
-.contenedor-galeria {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.foto-galeria {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 2px solid transparent;
-    background-color: #333;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.foto-galeria:hover {
-    transform: scale(1.05);
-    border-color: #FFC107;
-}
-
-/* =========================================
-   7. TIENDA CORPORATIVA
-========================================= */
-.subtitulo-tienda {
-    color: #AAAAAA;
-    margin-bottom: 40px;
-    font-size: 18px;
-}
-
-.contenedor-tienda {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.tarjeta-producto {
-    background-color: #1a1a1a;
-    border-radius: 15px;
-    width: 280px;
-    overflow: hidden;
-    border: 1px solid #333;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tarjeta-producto:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(255, 193, 7, 0.15);
-    border-color: #FFC107;
-}
-
-.foto-producto {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    background-color: #222;
-    border-bottom: 2px solid #333;
-}
-
-.info-producto {
-    padding: 25px 20px;
-    text-align: center;
-}
-
-.info-producto h3 {
-    font-size: 20px;
-    font-weight: 700;
-    color: #FFFFFF;
-    margin-bottom: 10px;
-}
-
-.precio {
-    font-size: 24px;
-    font-weight: 900;
-    color: #FFC107;
-    margin-bottom: 20px;
-}
-
-.btn-comprar {
-    display: inline-block;
-    background-color: #FFC107;
-    color: #000000;
-    padding: 12px 25px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 30px;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-comprar:hover {
-    background-color: #FFFFFF;
-    transform: scale(1.05);
-}
-
-/* =========================================
-   8. ADAPTACIÓN PARA CELULARES (RESPONSIVE)
-========================================= */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 15px;
-        gap: 15px;
-    }
-    
-    .hero {
-        margin-top: 100px;
-        height: 50vh;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .seccion {
-        padding: 50px 15px;
-    }
-
-    .tarjeta-jugador, .tarjeta-producto {
-        width: 100%;
-        max-width: 300px;
-    }
-/* --- PIE DE PÁGINA Y REDES SOCIALES --- */
-.footer {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #111;
-    color: white;
-    margin-top: 50px;
-}
-
-.redes-sociales {
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.btn-social {
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: transform 0.3s ease;
-}
-
-.instagram {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-}
-
-.tiktok {
-    background-color: #000;
-    border: 2px solid #00f2fe; /* Color estilo TikTok */
-}
-
-.btn-social:hover {
-    transform: scale(1.1); /* Efecto al pasar el mouse */
-}
 /* --- COLORES OFICIALES DEL CLUB --- */
 :root {
-    --color-principal: #111111; /* Color principal (Negro) */
-    --color-secundario: #d4af37; /* Color de detalles (Dorado) */
-    --color-fondo: #f4f4f9; /* Color de fondo de la web */
+    --color-principal: #111111; 
+    --color-secundario: #d4af37; 
+    --color-fondo: #f4f4f9; 
     --color-texto: #333333;
 }
 
@@ -465,7 +117,6 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Animación de flote */
 .tarjeta-jugador:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 25px rgba(0,0,0,0.2);
@@ -476,7 +127,7 @@ body {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    background-color: #ddd; /* Color gris si no carga la foto */
+    background-color: #ddd; 
 }
 
 .dorsal {
@@ -507,6 +158,32 @@ body {
     color: #666;
     font-weight: 700;
     font-size: 0.9rem;
+}
+
+/* --- NUEVA SECCIÓN: VIDEO YOUTUBE --- */
+.seccion-oscura {
+    background-color: #e9ecef;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporción 16:9 ideal para videos */
+    height: 0;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    background-color: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 /* --- FORMULARIO DE CONTACTO --- */
@@ -569,7 +246,7 @@ body {
     transform: scale(1.02);
 }
 
-/* --- PIE DE PÁGINA Y REDES SOCIALES --- */
+/* --- PIE DE PÁGINA E ÍCONOS DE REDES SOCIALES --- */
 .footer {
     text-align: center;
     padding: 50px 20px 30px;
@@ -586,32 +263,21 @@ body {
     margin-bottom: 30px;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 25px;
     flex-wrap: wrap;
+    align-items: center;
 }
 
-.btn-social {
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+.btn-icono img {
+    width: 60px; /* Tamaño del logo */
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.instagram {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-}
-
-.tiktok {
-    background-color: #000;
-    border: 2px solid #00f2fe; /* Color estilo TikTok */
-}
-
-.btn-social:hover {
-    transform: scale(1.1);
-    opacity: 0.9;
+.btn-icono img:hover {
+    transform: scale(1.15); /* Crece un poco al pasar el mouse */
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.4)); /* Brillo blanco */
 }
 
 .footer p {
@@ -622,7 +288,7 @@ body {
 /* --- DISEÑO RESPONSIVO (Para celulares) --- */
 @media (max-width: 600px) {
     .enlaces {
-        display: none; /* Oculta el menú en pantallas muy chicas para que no estorbe */
+        display: none; 
     }
     
     .hero h1 {
@@ -630,7 +296,7 @@ body {
     }
     
     .tarjeta-jugador {
-        width: 100%; /* Las tarjetas ocupan toda la pantalla en el celular */
+        width: 100%; 
         max-width: 300px;
     }
 }
