@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return '¡Nuestro próximo partido es este Sábado 15 de Junio a las 18:00 hrs contra Vascoamigos en el Estadio Municipal de Conchalí! ¡Te esperamos!';
         }
         else if (text.includes('socio') || text.includes('membresía') || text.includes('asociarme')) {
-            return '¡Para ser socio de Monica FC, debes llenar el formulario en la sección de socios contándonos tu mejor momento o mejor gol con el club! La directiva evaluará tu solicitud. <br><a href="#hazte-socio" style="color:var(--color-secundario); font-weight:bold; display:inline-block; margin-top:5px;">Ir a Hazte Socio</a>';
+            return '¡Para ser socio de Monica FC, dirígete a nuestra sección de contacto o haz clic en el banner "Hazte Socio" y envíanos tu mejor momento con el club! <br><a href="#hazte-socio" style="color:var(--color-secundario); font-weight:bold; display:inline-block; margin-top:5px;">Ir al Banner</a>';
         }
         else if (text.includes('entrada') || text.includes('ticket')) {
             return 'Las entradas se venden el mismo día del partido en la puerta del estadio. ¡Llega temprano para asegurar tu lugar!';

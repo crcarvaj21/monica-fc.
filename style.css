@@ -557,6 +557,61 @@ body {
     box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
 }
 
+/* --- BANNER SOCIO (SPAM PASIVO) --- */
+.banner-socio {
+    background-color: var(--color-principal);
+    padding: 40px 5%;
+    border-top: 2px solid var(--color-secundario);
+    border-bottom: 2px solid var(--color-secundario);
+    text-align: center;
+}
+
+.banner-socio-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.banner-socio-text {
+    text-align: left;
+    color: white;
+    flex: 1;
+    min-width: 250px;
+}
+
+.banner-socio-text h3 {
+    color: var(--color-secundario);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.banner-socio-text p {
+    color: #ccc;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.btn-banner {
+    padding: 12px 25px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .banner-socio-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .banner-socio-text {
+        text-align: center;
+    }
+}
+
 /* --- SPONSORS --- */
 .sponsors { padding: 60px 5%; background: white; }
 .sponsors h3 { color: #999; margin-bottom: 40px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 3px; }
