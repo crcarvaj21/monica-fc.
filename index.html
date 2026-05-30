@@ -4,104 +4,265 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monica FC | Sitio Oficial</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Navegación Premium -->
     <nav class="navbar">
-        <div class="logo">MONICA FC</div>
+        <div class="logo">
+            <img src="im/img/logo.jpeg" alt="Monica FC Logo" class="nav-logo-img"> MONICA FC
+        </div>
+        <!-- Menú Hamburguesa (Mobile) -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
+        
         <ul class="enlaces">
             <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#proximo-partido">Partidos</a></li>
             <li><a href="#plantel">Plantel</a></li>
-            <li><a href="#momentos">Momentos</a></li>
+            <li><a href="#estadisticas">Estadísticas</a></li>
+            <li><a href="#tienda">Tienda <span class="badge">Nuevo</span></a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
 
+    <!-- Header / Hero con Parallax -->
     <header id="inicio" class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>EL GIGANTE DE CONCHALÍ</h1>
-            <p>Rey de copas. Padres de Vascoamigos y Ronconredbull.</p>
+            <img src="im/img/logo.jpeg" alt="Logo Monica FC" class="hero-logo animate-up">
+            <h1 class="animate-up delay-1">REY DE COPAS</h1>
+            <p class="animate-up delay-2">El Gigante de Conchalí. Padres de Vascoamigos y Ronconredbull.</p>
+            <a href="#tienda" class="btn-premium animate-up delay-3">Ver Indumentaria Oficial</a>
         </div>
     </header>
 
-    <section id="plantel" class="seccion">
-        <h2>El Plantel Oficial</h2>
-        <div class="contenedor-jugadores">
-            
-            <div class="tarjeta-jugador">
-                <img src="img/jugador1.jpeg" alt="Foto Jugador 1" class="foto-perfil">
-                <div class="dorsal">10</div>
-                <h3>Nombre Jugador 1</h3>
-                <p class="posicion">Mediocampista</p>
+    <!-- Próximo Partido (Nueva Función) -->
+    <section id="proximo-partido" class="seccion match-banner">
+        <div class="match-content">
+            <div class="team">
+                <img src="im/img/logo.jpeg" alt="Monica FC" class="match-logo-img">
+                <h3>Monica FC</h3>
             </div>
-
-            <div class="tarjeta-jugador">
-                <img src="img/jugador2.jpeg" alt="Foto Jugador 2" class="foto-perfil">
-                <div class="dorsal">1</div>
-                <h3>Nombre Jugador 2</h3>
-                <p class="posicion">Guardameta</p>
+            <div class="match-info">
+                <span class="match-date">Sábado 15 de Junio, 18:00 hrs</span>
+                <span class="vs">VS</span>
+                <span class="match-location"><i class="fa-solid fa-location-dot"></i> Estadio Municipal de Conchalí</span>
             </div>
-
-            <div class="tarjeta-jugador">
-                <img src="img/jugador3.jpeg" alt="Foto Jugador 3" class="foto-perfil">
-                <div class="dorsal">9</div>
-                <h3>Nombre Jugador 3</h3>
-                <p class="posicion">Delantero</p>
+            <div class="team">
+                <i class="fa-solid fa-shield fa-4x logo-rival"></i>
+                <h3>Vascoamigos</h3>
             </div>
-
-            <div class="tarjeta-jugador">
-                <img src="img/jugador4.jpeg" alt="Foto Jugador 4" class="foto-perfil">
-                <div class="dorsal">4</div>
-                <h3>Nombre Jugador 4</h3>
-                <p class="posicion">Defensa</p>
-            </div>
-
         </div>
     </section>
 
+    <!-- Estadísticas del Club (Nueva Función) -->
+    <section id="estadisticas" class="seccion stats-section">
+        <h2>La Historia en Números</h2>
+        <p>El legado de nuestro club forjado con pasión y esfuerzo en la cancha.</p>
+        <div class="stats-grid">
+            <div class="stat-box">
+                <i class="fa-solid fa-trophy"></i>
+                <h3 class="counter">12</h3>
+                <p>Copas Ganadas</p>
+            </div>
+            <div class="stat-box">
+                <i class="fa-solid fa-futbol"></i>
+                <h3 class="counter">450</h3>
+                <p>Goles Históricos</p>
+            </div>
+            <div class="stat-box">
+                <i class="fa-solid fa-users"></i>
+                <h3 class="counter">5000+</h3>
+                <p>Hinchas Fieles</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plantel -->
+    <section id="plantel" class="seccion bg-light">
+        <h2>El Plantel Oficial</h2>
+        <p>Conoce a los guerreros que defienden nuestra camiseta cada fin de semana.</p>
+        <div class="contenedor-jugadores">
+            <!-- Tarjeta 1 -->
+            <div class="tarjeta-jugador">
+                <div class="imagen-wrapper">
+                    <img src="im/img/player.jpeg" alt="Jugador 1" class="foto-perfil" onerror="this.src='https://via.placeholder.com/250x300/111/d4af37?text=El+10'">
+                    <div class="dorsal">10</div>
+                </div>
+                <div class="info-jugador">
+                    <h3>Nombre Jugador 1</h3>
+                    <p class="posicion">Mediocampista</p>
+                    <div class="stats-mini">
+                        <span><i class="fa-solid fa-futbol"></i> 15 Goles</span>
+                        <span><i class="fa-solid fa-shoe-prints"></i> 20 Asist.</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Tarjeta 2 -->
+            <div class="tarjeta-jugador">
+                <div class="imagen-wrapper">
+                    <img src="im/img/player.jpeg" alt="Jugador 2" class="foto-perfil" onerror="this.src='https://via.placeholder.com/250x300/111/d4af37?text=Arquero'">
+                    <div class="dorsal">1</div>
+                </div>
+                <div class="info-jugador">
+                    <h3>Nombre Jugador 2</h3>
+                    <p class="posicion">Guardameta</p>
+                    <div class="stats-mini">
+                        <span><i class="fa-solid fa-hand"></i> 50 Atajadas</span>
+                        <span><i class="fa-solid fa-shield"></i> 12 Invictas</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Tarjeta 3 -->
+            <div class="tarjeta-jugador">
+                <div class="imagen-wrapper">
+                    <img src="im/img/player.jpeg" alt="Jugador 3" class="foto-perfil" onerror="this.src='https://via.placeholder.com/250x300/111/d4af37?text=Goleador'">
+                    <div class="dorsal">9</div>
+                </div>
+                <div class="info-jugador">
+                    <h3>Nombre Jugador 3</h3>
+                    <p class="posicion">Delantero</p>
+                    <div class="stats-mini">
+                        <span><i class="fa-solid fa-futbol"></i> 35 Goles</span>
+                        <span><i class="fa-solid fa-fire"></i> MVP</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Tarjeta 4 -->
+            <div class="tarjeta-jugador">
+                <div class="imagen-wrapper">
+                    <img src="im/img/player.jpeg" alt="Jugador 4" class="foto-perfil" onerror="this.src='https://via.placeholder.com/250x300/111/d4af37?text=Defensa'">
+                    <div class="dorsal">4</div>
+                </div>
+                <div class="info-jugador">
+                    <h3>Nombre Jugador 4</h3>
+                    <p class="posicion">Defensa</p>
+                    <div class="stats-mini">
+                        <span><i class="fa-solid fa-gavel"></i> 80 Quites</span>
+                        <span><i class="fa-solid fa-arrow-up"></i> 85% Pases</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Tienda (Nueva Función) -->
+    <section id="tienda" class="seccion seccion-tienda">
+        <h2>Tienda Oficial</h2>
+        <p>Viste los colores del Gigante de Conchalí. Compra la indumentaria oficial de la temporada.</p>
+        <div class="tienda-grid">
+            <div class="producto-card">
+                <div class="producto-img">
+                    <i class="fa-solid fa-shirt fa-5x" style="color: #111;"></i>
+                </div>
+                <h3>Camiseta Local 2026</h3>
+                <p class="precio">$29.990</p>
+                <button class="btn-comprar"><i class="fa-solid fa-cart-shopping"></i> Agregar al Carrito</button>
+            </div>
+            <div class="producto-card">
+                <div class="producto-img">
+                    <i class="fa-solid fa-shirt fa-5x" style="color: #d4af37;"></i>
+                </div>
+                <h3>Camiseta Visita 2026</h3>
+                <p class="precio">$29.990</p>
+                <button class="btn-comprar"><i class="fa-solid fa-cart-shopping"></i> Agregar al Carrito</button>
+            </div>
+            <div class="producto-card">
+                <div class="producto-img">
+                    <i class="fa-solid fa-mug-hot fa-5x" style="color: #333;"></i>
+                </div>
+                <h3>Tazón Oficial</h3>
+                <p class="precio">$9.990</p>
+                <button class="btn-comprar"><i class="fa-solid fa-cart-shopping"></i> Agregar al Carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Momentos -->
     <section id="momentos" class="seccion seccion-oscura">
         <h2>Mejores Momentos</h2>
-        <p>Revive las mejores jugadas y goles del Gigante de Conchalí.</p>
+        <p>Revive las mejores jugadas, atajadas y goles del Gigante de Conchalí en calidad HD.</p>
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/stAVoy_enaw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
     </section>
 
-    <section id="contacto" class="seccion seccion-contacto">
-        <h2>Mensajes para el Plantel</h2>
-        <p>¿Quieres enviarle un mensaje de aliento a los jugadores? ¡Escríbenos!</p>
+    <!-- Contacto Formulario Premium -->
+    <section id="contacto" class="seccion seccion-contacto bg-light">
+        <h2>Déjanos tu Mensaje</h2>
+        <p>¿Quieres enviarle un mensaje de aliento al equipo o tienes alguna consulta de negocios? ¡Escríbenos!</p>
         
         <form action="https://formspree.io/f/TU_CODIGO_AQUI" method="POST" class="formulario-contacto">
-            <input type="text" name="nombre" placeholder="Tu Nombre o Apodo" required>
+            <div class="input-group">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" name="nombre" placeholder="Tu Nombre o Apodo" required>
+            </div>
             
-            <select name="jugador" required>
-                <option value="" disabled selected>¿A quién le escribes?</option>
-                <option value="Todo el equipo">A todo el equipo</option>
-                <option value="El 10">Al 10 (Mediocampista)</option>
-                <option value="El Arquero">Al Arquero</option>
-                <option value="El Goleador">Al Delantero</option>
-                <option value="La Defensa">A la Defensa</option>
-            </select>
+            <div class="input-group">
+                <i class="fa-solid fa-users"></i>
+                <select name="jugador" required>
+                    <option value="" disabled selected>¿A quién le escribes?</option>
+                    <option value="Directiva">A la Directiva (Sponsors)</option>
+                    <option value="Todo el equipo">A todo el equipo</option>
+                    <option value="El 10">Al 10 (Mediocampista)</option>
+                    <option value="El Arquero">Al Arquero</option>
+                    <option value="El Goleador">Al Delantero</option>
+                    <option value="La Defensa">A la Defensa</option>
+                </select>
+            </div>
             
-            <textarea name="mensaje" placeholder="Tu mensaje de aliento..." rows="4" required></textarea>
+            <div class="input-group">
+                <i class="fa-solid fa-pen"></i>
+                <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+            </div>
             
-            <button type="submit" class="btn-enviar">Enviar Mensaje ⚽</button>
+            <button type="submit" class="btn-enviar">Enviar Mensaje <i class="fa-solid fa-paper-plane"></i></button>
         </form>
     </section>
 
-    <footer class="footer">
-        <h2>Síguenos en nuestras Redes</h2>
-        <div class="redes-sociales">
-            <a href="https://www.instagram.com/monica.footbalclub/" target="_blank" class="btn-icono">
-                <img src="img/instagram.png" alt="Instagram Monica FC">
-            </a>
-            <a href="https://www.tiktok.com/@monicafc2025?_r=1&_t=ZS-96mM0hAXVYa" target="_blank" class="btn-icono">
-                <img src="img/tiktok.png" alt="TikTok Monica FC">
-            </a>
+    <!-- Patrocinadores (Nueva Función) -->
+    <section class="seccion sponsors">
+        <h3>Nuestros Patrocinadores Oficiales</h3>
+        <div class="sponsors-logos">
+            <i class="fa-brands fa-aws fa-3x" title="Sponsor 1"></i>
+            <i class="fa-brands fa-docker fa-3x" title="Sponsor 2"></i>
+            <i class="fa-brands fa-cc-visa fa-3x" title="Sponsor 3"></i>
+            <i class="fa-brands fa-playstation fa-3x" title="Sponsor 4"></i>
         </div>
-        <p>Monica FC © 2026 - Conchalí, Santiago</p>
+    </section>
+
+    <!-- Footer Premium -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2><img src="im/img/logo.jpeg" alt="Monica FC Logo" class="nav-logo-img"> MONICA FC</h2>
+                <p>El equipo del pueblo. Pasión, garra y gloria desde Conchalí para el mundo. Fundado para hacer historia.</p>
+            </div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="redes-sociales">
+                    <!-- Iconos de redes sociales utilizando las imágenes originales -->
+                    <a href="https://www.instagram.com/monica.footbalclub/" target="_blank" class="btn-icono-img" title="Instagram">
+                        <img src="im/img/instagram.png" alt="Instagram Monica FC">
+                    </a>
+                    <a href="https://www.tiktok.com/@monicafc2025?_r=1&_t=ZS-96mM0hAXVYa" target="_blank" class="btn-icono-img" title="TikTok">
+                        <img src="im/img/tiktok.png" alt="TikTok Monica FC">
+                    </a>
+                    <a href="#" target="_blank" class="btn-icono" title="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Monica FC © 2026 - Todos los derechos reservados | Conchalí, Santiago</p>
+        </div>
     </footer>
 
 </body>
