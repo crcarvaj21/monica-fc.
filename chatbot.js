@@ -63,7 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function getBotResponse(input) {
         const text = input.toLowerCase();
         
-        if (text.includes('partido') || text.includes('juegan') || text.includes('proximo')) {
+        if (text.includes('agendar') || text.includes('amistoso') || text.includes('retar')) {
+            return '¿Quieres medirte contra el Gigante de Conchalí? Llena el formulario en la sección "Agendar Partido" y nuestra directiva se pondrá en contacto contigo. <br><a href="#agendar-partido" style="color:var(--color-secundario); font-weight:bold; display:inline-block; margin-top:5px;">Ir a Agendar Partido</a>';
+        }
+        else if (text.includes('partido') || text.includes('juegan') || text.includes('proximo')) {
             return '¡Nuestro próximo partido es este Sábado 15 de Junio a las 18:00 hrs contra Vascoamigos en el Estadio Municipal de Conchalí! ¡Te esperamos!';
         }
         else if (text.includes('socio') || text.includes('membresía') || text.includes('asociarme')) {
