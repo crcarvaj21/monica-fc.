@@ -27,6 +27,7 @@
             <li><a href="#plantel">Plantel</a></li>
             <li><a href="#estadisticas">Estadísticas</a></li>
             <li><a href="#tienda">Tienda <span class="badge">Nuevo</span></a></li>
+            <li><a href="#hazte-socio">Hazte Socio</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
@@ -193,6 +194,32 @@
         </div>
     </section>
 
+    <!-- Hazte Socio (Nueva Función) -->
+    <section id="hazte-socio" class="seccion seccion-socio">
+        <h2>Hazte Socio</h2>
+        <p>Únete a la familia del Gigante de Conchalí. Para ser socio, la directiva debe aprobar tu solicitud. Cuéntanos tu mejor momento o mejor gol vivido con el club.</p>
+        
+        <form id="form-socio" class="formulario-contacto">
+            <div class="input-group">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="nombre_socio" placeholder="Tu Nombre y Apellido" required>
+            </div>
+            
+            <div class="input-group">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="email_socio" placeholder="Tu Correo Electrónico" required>
+            </div>
+            
+            <div class="input-group">
+                <i class="fa-solid fa-star"></i>
+                <textarea id="mejor_momento" placeholder="Describe tu mejor momento o mejor gol con Monica FC..." rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn-enviar">Solicitar Membresía <i class="fa-solid fa-id-card"></i></button>
+            <p id="socio-mensaje" style="display: none; margin-top: 20px; font-weight: bold; color: var(--color-secundario); text-align: center; font-size: 1.1rem;"></p>
+        </form>
+    </section>
+
     <!-- Contacto Formulario Premium -->
     <section id="contacto" class="seccion seccion-contacto bg-light">
         <h2>Déjanos tu Mensaje</h2>
@@ -265,10 +292,44 @@
         </div>
     </footer>
 
-</body>
-</html>os derechos reservados | Conchalí, Santiago</p>
-        </div>
-    </footer>
+    <!-- Chatbot Zamba -->
+    <div class="chatbot-container">
+        <!-- Botón para abrir el chatbot -->
+        <button class="chatbot-toggle" id="chatbot-toggle">
+            <img src="im/img/logo.jpeg" alt="Chatbot Zamba" class="chatbot-toggle-avatar">
+        </button>
 
+        <!-- Ventana del chatbot -->
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <img src="im/img/logo.jpeg" alt="Zamba" class="chatbot-avatar">
+                <div>
+                    <h4>Zamba</h4>
+                    <p>Asistente Monica FC</p>
+                </div>
+                <button class="chatbot-close" id="chatbot-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="message bot-message">
+                    ¡Hola hinchas del Monica! Soy Zamba, tu asistente virtual del Gigante de Conchalí. ¿En qué los puedo ayudar hoy?
+                </div>
+                <div class="message bot-message">
+                    Puedes preguntarme sobre:<br>
+                    <button class="btn-chatbot-extra" onclick="sendOption('Próximo partido')">Próximo partido</button>
+                    <button class="btn-chatbot-extra" onclick="sendOption('Unirme al equipo')">Unirme al equipo</button>
+                    <button class="btn-chatbot-extra" onclick="sendOption('Hazte socio')">Hazte socio</button>
+                    <button class="btn-chatbot-extra" onclick="sendOption('Indumentaria')">Indumentaria</button>
+                </div>
+            </div>
+            
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbot-input" placeholder="Escribe tu mensaje...">
+                <button id="chatbot-send"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="chatbot.js"></script>
 </body>
 </html>

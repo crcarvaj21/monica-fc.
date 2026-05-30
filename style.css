@@ -918,3 +918,27 @@ body {
         bottom: 75px;
     }
 }
+
+/* --- CHATBOT EXTRAS --- */
+.btn-chatbot-extra {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: var(--color-fondo-alt);
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    margin-top: 5px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transicion-suave);
+    color: var(--color-texto);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-chatbot-extra:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-principal);
+    border-color: var(--color-secundario);
+}
+
