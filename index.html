@@ -366,27 +366,47 @@
 
     <!-- Scripts adicionales para Calendario y Toast -->
     <script>
-        // Calendario Lógica Básica
+        // Calendario Lógica Mejorada
         const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-        let mesActual = 5; // Junio
-        let anioActual = 2026;
+        let fechaActual = new Date();
+        fechaActual.setDate(1); // Set to first day
+        let mesActual = fechaActual.getMonth();
+        let anioActual = fechaActual.getFullYear();
 
         function renderCalendario() {
             document.getElementById('mes-anio').innerText = `${meses[mesActual]} ${anioActual}`;
             const fechas = document.getElementById('calendario-fechas');
             fechas.innerHTML = '';
             
-            const diasMes = 30; 
-            for(let i=1; i<=diasMes; i++) {
+            // Obtener el día de la semana del primer día del mes (0=Dom, 1=Lun, ..., 6=Sáb)
+            let primerDia = new Date(anioActual, mesActual, 1).getDay();
+            // Ajustar para que la semana empiece en Lunes (0=Lun, ..., 6=Dom)
+            primerDia = primerDia === 0 ? 6 : primerDia - 1;
+            
+            // Obtener cantidad de días en el mes
+            const diasMes = new Date(anioActual, mesActual + 1, 0).getDate();
+            
+            // Llenar espacios en blanco antes del primer día
+            for(let i = 0; i < primerDia; i++) {
+                const div = document.createElement('div');
+                div.className = 'calendario-dia empty';
+                fechas.appendChild(div);
+            }
+
+            for(let i = 1; i <= diasMes; i++) {
                 const div = document.createElement('div');
                 div.className = 'calendario-dia';
-                if (i % 7 === 6 || i % 7 === 0) {
-                    div.innerText = i;
+                div.innerText = i;
+                
+                // Determinar si es fin de semana
+                let diaSemana = (primerDia + i - 1) % 7; // 0=Lun, ..., 6=Dom
+                
+                // Disponible solo Sábado (5) y Domingo (6)
+                if (diaSemana === 5 || diaSemana === 6) {
                     div.onclick = () => seleccionarFecha(i, div);
                 } else {
-                    div.innerText = i;
                     div.className += ' disabled';
-                    div.title = 'No disponible';
+                    div.title = 'Solo fines de semana';
                 }
                 fechas.appendChild(div);
             }
@@ -396,15 +416,32 @@
             document.querySelectorAll('.calendario-dia').forEach(el => el.classList.remove('selected'));
             elemento.classList.add('selected');
             document.getElementById('fecha-seleccionada').innerText = `${dia} de ${meses[mesActual]} de ${anioActual}`;
-            document.getElementById('form-agendar').style.display = 'block';
+            document.getElementById('mensaje-seleccionar').style.display = 'none';
+            document.getElementById('form-agendar-content').style.display = 'block';
         }
 
-        document.getElementById('prev-month').onclick = () => { mesActual--; if(mesActual < 0){mesActual=11; anioActual--;} renderCalendario(); };
-        document.getElementById('next-month').onclick = () => { mesActual++; if(mesActual > 11){mesActual=0; anioActual++;} renderCalendario(); };
+        document.getElementById('prev-month').onclick = () => { 
+            mesActual--; 
+            if(mesActual < 0){mesActual = 11; anioActual--;} 
+            renderCalendario(); 
+        };
+        document.getElementById('next-month').onclick = () => { 
+            mesActual++; 
+            if(mesActual > 11){mesActual = 0; anioActual++;} 
+            renderCalendario(); 
+        };
         
         renderCalendario();
 
-        // Spam Tranquilo (Aparece a los 10 segundos para no molestar al instante)
+        // Spam Tranquilo (Aparece a los 10 segundos)
+        setTimeout(() => {
+            document.getElementById('toast-socio').classList.add('show');
+        }, 10000);
+    </script>
+
+    <script src="chatbot.js"></script>
+</body>
+</html> los 10 segundos para no molestar al instante)
         setTimeout(() => {
             document.getElementById('toast-socio').classList.add('show');
         }, 10000);
