@@ -206,8 +206,42 @@
         </div>
     </section>
 
+    <!-- Agendar Partido (Nueva Función) -->
+    <section id="agendar-partido" class="seccion bg-light">
+        <h2>Agendar Partido</h2>
+        <p>¿Tienes un equipo y quieres medirte contra el Gigante de Conchalí? Selecciona una fecha disponible en nuestro calendario y envíanos tu solicitud.</p>
+        
+        <div class="calendario-container">
+            <div class="calendario-header">
+                <button id="prev-month" title="Mes Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+                <h3 id="mes-anio">Junio 2026</h3>
+                <button id="next-month" title="Mes Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+            <div class="calendario-grid-dias">
+                <div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div><div>Dom</div>
+            </div>
+            <div class="calendario-grid-fechas" id="calendario-fechas">
+                <!-- Generado por JS -->
+            </div>
+            <div class="calendario-formulario" id="form-agendar" style="display: none;">
+                <h4>Solicitar partido para el <span id="fecha-seleccionada"></span></h4>
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('¡Solicitud enviada! Nos pondremos en contacto para confirmar.'); this.reset(); document.getElementById('form-agendar').style.display='none';">
+                    <div class="input-group">
+                        <i class="fa-solid fa-shield"></i>
+                        <input type="text" placeholder="Nombre de tu Equipo" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="tel" placeholder="Teléfono de Contacto" required>
+                    </div>
+                    <button type="submit" class="btn-enviar">Enviar Solicitud <i class="fa-solid fa-check"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Contacto Formulario Premium -->
-    <section id="contacto" class="seccion seccion-contacto bg-light">
+    <section id="contacto" class="seccion seccion-contacto">
         <h2>Déjanos tu Mensaje</h2>
         <p>¿Quieres enviarle un mensaje de aliento al equipo o tienes alguna consulta de negocios? ¡Escríbenos!</p>
         
@@ -316,6 +350,65 @@
             </div>
         </div>
     </div>
+
+    <!-- Spam Tranquilo Socio -->
+    <div id="toast-socio" class="toast-socio">
+        <button class="toast-close" onclick="document.getElementById('toast-socio').classList.remove('show')"><i class="fa-solid fa-xmark"></i></button>
+        <div class="toast-content">
+            <i class="fa-solid fa-handshake-angle fa-2x" style="color: var(--color-secundario);"></i>
+            <div>
+                <h4>¿Aún no eres socio?</h4>
+                <p>Únete a la familia del Gigante de Conchalí de manera tranquila cuando lo desees.</p>
+                <a href="#hazte-socio" class="btn-toast" onclick="document.getElementById('toast-socio').classList.remove('show')">Ver detalles</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts adicionales para Calendario y Toast -->
+    <script>
+        // Calendario Lógica Básica
+        const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+        let mesActual = 5; // Junio
+        let anioActual = 2026;
+
+        function renderCalendario() {
+            document.getElementById('mes-anio').innerText = `${meses[mesActual]} ${anioActual}`;
+            const fechas = document.getElementById('calendario-fechas');
+            fechas.innerHTML = '';
+            
+            const diasMes = 30; 
+            for(let i=1; i<=diasMes; i++) {
+                const div = document.createElement('div');
+                div.className = 'calendario-dia';
+                if (i % 7 === 6 || i % 7 === 0) {
+                    div.innerText = i;
+                    div.onclick = () => seleccionarFecha(i, div);
+                } else {
+                    div.innerText = i;
+                    div.className += ' disabled';
+                    div.title = 'No disponible';
+                }
+                fechas.appendChild(div);
+            }
+        }
+
+        function seleccionarFecha(dia, elemento) {
+            document.querySelectorAll('.calendario-dia').forEach(el => el.classList.remove('selected'));
+            elemento.classList.add('selected');
+            document.getElementById('fecha-seleccionada').innerText = `${dia} de ${meses[mesActual]} de ${anioActual}`;
+            document.getElementById('form-agendar').style.display = 'block';
+        }
+
+        document.getElementById('prev-month').onclick = () => { mesActual--; if(mesActual < 0){mesActual=11; anioActual--;} renderCalendario(); };
+        document.getElementById('next-month').onclick = () => { mesActual++; if(mesActual > 11){mesActual=0; anioActual++;} renderCalendario(); };
+        
+        renderCalendario();
+
+        // Spam Tranquilo (Aparece a los 10 segundos para no molestar al instante)
+        setTimeout(() => {
+            document.getElementById('toast-socio').classList.add('show');
+        }, 10000);
+    </script>
 
     <script src="chatbot.js"></script>
 </body>
